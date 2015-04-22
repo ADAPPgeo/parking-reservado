@@ -25,6 +25,45 @@ var cartodb_man_hole, ocio;
 
 $(document).ready(function() {
 
+    var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
+ $(document).on("click", '.whatsapp', function() {
+        if( isMobile.any() ) {
+            var text = $(this).attr("data-text");
+            var url = $(this).attr("data-link");
+            var message = encodeURIComponent(text) + " - " + encodeURIComponent(url);
+            var whatsapp_url = "whatsapp://send?text=" + message;
+            window.location.href = whatsapp_url;
+        } else {
+            var text = $(this).attr("data-text");
+            var url = $(this).attr("data-link");
+            var message = encodeURIComponent(text) + " - " + encodeURIComponent(url);
+            alert(message);
+        }
+
+    });
+
+
+
 //geo.init();
 
 //Detecta si en la url hay coordenadas y centra el mapa en dichas coordenadas:
@@ -89,19 +128,32 @@ if (cadVariables.length>0){
     popupTemplate: function (properties) {
       var nombrecalle = properties.calle.split(",");
       var address = nombrecalle[1]+ " " + nombrecalle[2]+ " " + nombrecalle[0] + ", " + properties.portal;
+      var link_url = 'lat='+ properties.lat + '&lon=' + properties.lon;
+
       var output ='<h2>'+address+'</h2>'
-        + '<a target="_blank" class="social-link" href="http://adappgeo.net/mapa/parking/cartodb/'
-        + '?lat='+ properties.lat + '&lon=' + properties.lon +'">Compartir Punto</a>'
-        + '<a class="social-twitter" target="_blank" style="display: block;" href="https://twitter.com/intent/tweet?lat=' 
+
+        + '<h3><a data-text="Parking reservado en '+address+'" data-link="http://adappgeo.net/mapa/parking/cartodb/'
+        + '?' + link_url+'" class="whatsapp w3_whatsapp_btn w3_whatsapp_btn_large"><i class="fa fa-whatsapp"></i> Whatsapp</a></h3>'
+
+        //+ '<a target="_blank" class="social-link" href="http://adappgeo.net/mapa/parking/cartodb/'
+        //+ '?' + link_url +'">Compartir Punto</a>'
+
+         +'<h3><a target="_blank" class="social-facebook" href=""> <i class="fa fa-facebook"></i> Facebook</a></h3>'
+        
+        + '<h3><a class="social-twitter" target="_blank" style="display: block;" href="https://twitter.com/intent/tweet?lat=' 
         + properties.lat
         + ';lon=' + properties.lon
         + ';button_hashtag=parkingreservado'
         + ';button_hashtag=accesibilidad&amp;via=adappgeo&amp;text='
-        + address + '" data-lang="es" data-related="#parkingreservado #accesibilidad #'
+        + address + '" data-lang="es" data-related="#parkingreservado #'
         + properties.distrito
-        + '" data-url="" via="adappgeo">GeoTweet</a>'
-        +'<a target="_blank" class="social-link" href="https://www.google.es/maps/place/'
-        + address +',Madrid/@'+properties.lat+','+properties.lon+'">Google Maps</a>';
+        + '" data-url="" via="adappgeo"><i class="fa fa-twitter"></i> Twitter</a></h3>'
+        
+
+        +'<h3><a target="_blank" class="social-link" href="https://www.google.es/maps/place/'
+        + address +',Madrid/@'+properties.lat+','+properties.lon+'"> <i class="fa fa-map-marker"></i> Google Maps</a></h3>'
+        ;
+
       return output;
     },
     //popupTemplate: '<div ><h2>{calle}</h2><table class="condensed-table"><tr><th>Distrito</th><td>{distrito}</td></tr><tr><th>Barrio</th><td>{barrio}</td></tr></table></div><a class="social-twitter" target="_blank"style="display: block;"href="https://twitter.com/intent/tweet?lat={lat};lon={lon};button_hashtag=parkingreservado;via=adappgeo&amp;text={calle}{portal}"data-lang="es"data-related="#parkingreservado #accesibilidad"data-url="http://adappgeo.net/"via="adappgeo">GeoTweet</a><a target="_blank" class="social-link" href="https://www.google.es/maps/place/{calle},{portal},Madrid/@{lat}{lon}">Google Maps</a>',
