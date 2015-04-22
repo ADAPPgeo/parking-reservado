@@ -65,7 +65,24 @@ if (cadVariables.length>0){
     ]
   });
 
-
+var info = function (feature) {
+    var nombrecalle = feature.properties.calle.split(",");
+    var address = nombrecalle[1]+ " " + nombrecalle[2]+ " " + nombrecalle[0] + " " + feature.properties.portal;
+    var output ='<h2>'+address+'</h2>'
+      + '<a target="_blank" class="social-link" href="http://adappgeo.net/mapa/parking/cartodb/'
+      + '?lat='+ feature.properties.lat + '&lon=' + feature.properties.lon +'">Compartir Punto</a>'
+      + '<a class="social-twitter" target="_blank" style="display: block;" href="https://twitter.com/intent/tweet?lat=' 
+      + feature.properties.lat
+      + ';lon=' + feature.properties.lon
+      + ';button_hashtag=parkingreservado'
+      + ';button_hashtag=accesibilidad&amp;via=adappgeo&amp;text='
+      + address + '" data-lang="es" data-related="#parkingreservado #accesibilidad #'
+      + feature.properties.distrito
+      + '" data-url="" via="adappgeo">GeoTweet</a>'
+      +'<a target="_blank" class="social-link" href="https://www.google.es/maps/place/'
+      + address +',Madrid/@'+feature.properties.lat+','+feature.properties.lon+'">Google Maps</a>';
+    return output;
+    };
 
   var cartodb_man_hole = new lvector.CartoDB({
     user: "adappgeo",
@@ -88,48 +105,32 @@ if (cadVariables.length>0){
         fillOpacity: 0.5
       }
     },
-    clickEvent: function (feature, event) {
-
-
-      var nombrecalle = feature.properties.calle.split(",");
-      var address = nombrecalle[1]+ " " + nombrecalle[2]+ " " + nombrecalle[0] + " " + feature.properties.portal;
-      var timeout = 0;
-      var pop = $('#sidebar');
-      pop.addClass('act');
-      pop.find('h2').html(address);
-      if (pop.activePop) {
-        $('#sidebar').pop.removeClass('act');
-        pop.closePops();
-        timeout = 600;
-      }
-      pop.popTimeout = setTimeout(function() {
-        pop.find('.evt-desc').html(          
-          "</br>"
-          + '<a target="_blank" class="social-link" href="http://adappgeo.net/mapa/parking/cartodb/'
-          + '?lat='+ feature.properties.lat + '&lon=' + feature.properties.lon +'">Compartir Punto</a>'
-          + '<a class="social-twitter" target="_blank" style="display: block;" href="https://twitter.com/intent/tweet?lat=' 
-          + feature.properties.lat
-          + ';lon=' + feature.properties.lon
-          + ';button_hashtag=parkingreservado'
-          + ';button_hashtag=accesibilidad&amp;via=adappgeo&amp;text='
-          + address + '" data-lang="es" data-related="#parkingreservado #accesibilidad #'
-          + feature.properties.distrito
-          + '" data-url="" via="adappgeo">GeoTweet</a>'
-          +'<a target="_blank" class="social-link" href="https://www.google.es/maps/place/'
-          + address +',Madrid/@'+feature.properties.lat+','+feature.properties.lon+'">Google Maps</a>'
-
-          );
-      }, timeout);
-
+    popupTemplate: function (properties) {
+    var nombrecalle = properties.calle.split(",");
+    var address = nombrecalle[1]+ " " + nombrecalle[2]+ " " + nombrecalle[0] + " " + properties.portal;
+    var output ='<h2>'+address+'</h2>'
+      + '<a target="_blank" class="social-link" href="http://adappgeo.net/mapa/parking/cartodb/'
+      + '?lat='+ properties.lat + '&lon=' + properties.lon +'">Compartir Punto</a>'
+      + '<a class="social-twitter" target="_blank" style="display: block;" href="https://twitter.com/intent/tweet?lat=' 
+      + properties.lat
+      + ';lon=' + properties.lon
+      + ';button_hashtag=parkingreservado'
+      + ';button_hashtag=accesibilidad&amp;via=adappgeo&amp;text='
+      + address + '" data-lang="es" data-related="#parkingreservado #accesibilidad #'
+      + properties.distrito
+      + '" data-url="" via="adappgeo">GeoTweet</a>'
+      +'<a target="_blank" class="social-link" href="https://www.google.es/maps/place/'
+      + address +',Madrid/@'+properties.lat+','+properties.lon+'">Google Maps</a>';
+    return output;
     },
-    popupTemplate: '<div ><h3>{calle}</h3><table class="condensed-table"><tr><th>Distrito</th><td>{distrito}</td></tr><tr><th>Barrio</th><td>{barrio}</td></tr></table></div><a class="social-twitter" target="_blank"style="display: block;"href="https://twitter.com/intent/tweet?lat={lat};lon={lon};button_hashtag=parkingreservado;via=adappgeo&amp;text={calle}{portal}"data-lang="es"data-related="#parkingreservado #accesibilidad"data-url="http://adappgeo.net/"via="adappgeo">GeoTweet</a><a target="_blank" class="social-link" href="https://www.google.es/maps/place/{calle},{portal},Madrid/@{lat}{lon}">Google Maps</a>',
+    //popupTemplate: '<div ><h2>{calle}</h2><table class="condensed-table"><tr><th>Distrito</th><td>{distrito}</td></tr><tr><th>Barrio</th><td>{barrio}</td></tr></table></div><a class="social-twitter" target="_blank"style="display: block;"href="https://twitter.com/intent/tweet?lat={lat};lon={lon};button_hashtag=parkingreservado;via=adappgeo&amp;text={calle}{portal}"data-lang="es"data-related="#parkingreservado #accesibilidad"data-url="http://adappgeo.net/"via="adappgeo">GeoTweet</a><a target="_blank" class="social-link" href="https://www.google.es/maps/place/{calle},{portal},Madrid/@{lat}{lon}">Google Maps</a>',
     singlePopup: true
   });
 
 //<a class="social-twitter" target="_blank"style="display: block;"href="https://twitter.com/intent/tweet?lat={lat};lon={lon};button_hashtag=parkingreservado;via=adappgeo&amp;text=https://www.google.es/maps/place/{calle},{portal},Madrid/@{lat}{lon}"data-lang="es"data-related="#parkingreservado #accesibilidad"data-url="http://adappgeo.net/"via="adappgeo">GeoTweet</a>
 //https://www.google.es/maps/place/Calle+León,+14,+28014+Madrid/@40.4139052,-3.6989524,17z
 //pone en marcha la capa de cartodb
-    cartodb_man_hole.setMap(map);
+  cartodb_man_hole.setMap(map);
 
     //map.addLayer(ocio);
 
