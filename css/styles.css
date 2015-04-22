@@ -1,21 +1,30 @@
 
 
 
-  @font-face{
-    src: url('../../../../fonts/Ubuntu-C.ttf');
+
+  @font-face {
     font-family: 'Ubuntu Condensed';
+    src: url('../../../../fonts/Ubuntu-C.ttf');
+    
+  }
+
+  @font-face{
+    font-family: 'Big Noodle';
+    src: url('../../../../fonts/big_noodle_titling.ttf');
   }
 
 
 
 h1 { font-family: 'Ubuntu Condensed', sans-serif; font-weight: 800; }
-h2 { font-family: 'Montserrat', sans-serif; }
-h3 { font-family: 'Gentium Book Basic', serif; }
+h2 { font-family: 'Big Noodle', sans-serif; font-size: 2em; }
+h3 { font-family: 'Big Noodle', serif; }
 h4 { font-family: 'Gentium Book Basic', serif; }
 h5 { font-family: 'Cantarell', sans-serif; }
 h6 { font-family: 'Cantarell', sans-serif; }
-h1, h2 { font-family: 'Montserrat', sans-serif; }
-
+h1, h2, h3 { font-family: 'Big Noodle', sans-serif; text-shadow: 1px 2px rgba(0, 0, 0, 0.7); }
+h3 {
+  padding: 0 12px 4px;
+}
 p { line-height: 1.1em; margin-bottom: 1em; }
 
 ul.bl--list { margin-bottom: 1.2em; font-weight: 800; }
@@ -62,20 +71,21 @@ html[xmlns] .clearfix { display: block; }
   body.sidebarAct { padding-left: 300px; box-sizing: border-box; }
 
   #main { padding-top: 50px; padding-bottom: 80px; box-sizing: border-box; }
-
+   
 /* HEADER */
   #header { background: #001e42; color: white; height: 50px; z-index: 10; position: absolute; top: 0; width: 100%; }
- 
+    #header h1 {display: inline-block;}
     #header a { color: white; text-decoration: none; }
       #header a:hover, #header a:visited { color: white; text-decoration: underline; }
 
-    #header .logo { display: block; width: 128px; height: 35px; text-indent: -999px; overflow: hidden; margin: 10px 0 0 10px;
-      background: url(../img/sp--header.png) no-repeat; }
+    #header i { text-align: right; font-size: 2em; padding: 6px 0 0 80px;}
+    #header .logo { font-size: 2em; text-indent: -999px; overflow: hidden; margin: 10px 0 0 10px;
+      }
     #header .power { height: 100%; z-index: 2; position: relative; padding: 0; overflow: hidden; text-indent: -999px; margin-right: 10px;
       background: #001e42 url(../img/sp--header.png) -209px 10px no-repeat; width: 50px; }
-    #header .twt { height: 100%; z-index: 2; position: relative; padding: 0; overflow: hidden; text-indent: -999px; margin-right: 10px;
-      background: #001e42 url(../img/sp--header.png) -173px 10px no-repeat; width: 37px; }
-    #header .title {line-height: 37px; font-family: 'Ubuntu Condensed', sans-serif; font-weight: 800;  width: 300px; height: 35px;  z-index: 2; margin: 10px 0 0 10px;}
+    #header .twt {content:'\f007'; height: 100%; z-index: 2; position: relative; padding: 0; overflow: hidden; text-indent: -999px; margin-right: 10px;
+       width: 37px; }
+    #header .title {line-height: 37px; font-family: 'Ubuntu Condensed', sans-serif; font-size: 1.5em; font-weight: 800;  width: 300px; height: 35px;  z-index: 2; margin: 10px 0 0 10px;}
 
     #hd-menu {  color: white; background: #001e42; float: left; font-size: 1.2em; }
       #hd-menu a:hover { text-decoration: none; color: #001e42; background: #A0C6E5;  }
@@ -139,12 +149,13 @@ html[xmlns] .clearfix { display: block; }
   .leaflet-marker-icon.disabled { display: none; }
 
 
+
 /* sidebar */
 #sidebar { width: 350px; height: 50%; position: absolute; left: -490px; top: 0; padding: 45px; color: #3a7c99;
     background: rgba(255,255,255,0.7); box-sizing: border-box;
     -webkit-transition: all .6s; -moz-transition: all .6s;  -o-transition: all .6s; transition: all .6s; }
   #sidebar.act { left: 0; }
-  #sidebar h2 { text-align: center; font-size: 1.2em; line-height: 1.2em; padding-bottom: 1em; margin-top: 28px; 
+  #sidebar h2 { text-align: center; font-size: 1.2em; line-height: 1.2em; padding-bottom: 1em; margin-top: 48px; 
         position: relative; background: none!important;}
     #sidebar h2:before { display: block; position: absolute; top: -130px; margin-left: 145px; height: 105px; width: 105px;
       border-radius: 125px; background: #70BA50; border: 5px solid white; box-shadow: 1px 2px 9px rgba(0,0,0,0.4);
@@ -152,11 +163,86 @@ html[xmlns] .clearfix { display: block; }
   #sidebar .evt-address { line-height: 1.2em; font-size: 1.2em; }
   #sidebar .evt-desc { line-height: 1.2em; font-size: 1.2em; }
 
-.social-twitter, .social-link {  }
-.social-twitter:before, .social-link:before { display: inline-block; content: ''; 
-    padding-left: 20px; z-index: 2; position: relative; padding: 0; overflow: hidden; text-indent: -999px;
-    background: url(../img/sp--header.png) -263px 10px no-repeat; width: 37px; height: 36px; }
-  .social-link:before { background-position: -293px 10px; }
+.social-twitter, .social-link, .w3_whatsapp_btn{  }
+
+
+/* compartir */
+
+
+
+ .social-twitter, .social-link, .w3_whatsapp_btn, .social-facebook{
+    border: 2px solid rgba(250, 250, 250, 0.7);
+    display: inline-block !important;
+    position: relative;
+    padding: 0 12px 4px;
+    overflow: hidden;
+    width: 190px;
+    font-family: Arial,sans-serif;
+    letter-spacing: .4px;
+    cursor: pointer;
+    font-family: "Ubuntu Condensed",sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 25px;
+    background-repeat: no-repeat;
+    line-height: 2.2;
+    text-decoration: none;
+    text-align: left;
+}
+
+.social-twitter h3, .social-link h3, .w3_whatsapp_btn h3, .social-facebook h3 {
+  margin-bottom: 10px;
+
+}
+  .w3_whatsapp_btn{
+    background-color: #5cbe4a;
+  }
+
+  .social-twitter{
+    background-color:#55ACEE;
+  }
+  .social-facebook{
+    background-color:#3A5795;
+  }
+  .social-link{
+    background-color:#F1756B;
+  }
+
+.social-twitter i, .social-link i, .w3_whatsapp_btn i, .social-facebook i {
+  font-size: 2em;
+  padding: 5px 5px 9px 0;
+}
+  
+
+.w3_whatsapp_btn_small {
+    font-size: 12px;
+    background-size: 16px;
+    background-position: 5px 2px;
+    padding: 3px 6px 3px 25px;
+}
+
+.w3_whatsapp_btn_medium {
+    font-size: 16px;
+    background-size: 20px;
+    background-position: 4px 2px;
+    padding: 4px 6px 4px 30px;
+}
+
+.w3_whatsapp_btn_large, .social-twitter, .social-link, .social-facebook {
+  
+    font-size: 20px;
+    background-size: 20px;
+    background-position: 5px 5px;
+    padding: 0 25px;
+    color: #fff;
+}
+.whatsapp a{ 
+  padding: 0 12px 4px;
+  color: #fff;text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+
 
 /* FORM */
 input, textarea, select { border: none; border-bottom: 3px solid red; display: block; width: 100%; line-height: 1.2em;
@@ -169,6 +255,10 @@ input:focus, input:hover:active, input:active, select:focus, textarea:focus { bo
 .required { color: red; }
 .small { font-size: 0.8em; }
 select { margin-bottom: 0.9em; }
+
+
+
+
 
 
 /* sliding panels */
@@ -191,7 +281,7 @@ select { margin-bottom: 0.9em; }
 
 #ggle-map { height: 257px; width: 100%; }
 
-.main-bottom { background: #fefaee; color: #3a7c99; width: 100%; padding: 20px 0; z-index: 7; position: absolute; bottom: 0; }
+.main-bottom { background: #fefaee; color: #3a7c99; width: 100%; z-index: 7; position: absolute; bottom: 0; }
   .main-bottom a:hover { text-decoration: underline; }
 .main-bottom .wk-clr-b { clear: both; width: 100%; margin: 0 auto; font-size: 1.2em; text-align: center; }
   .main-bottom .wk-col-33 { width: 20%; margin: 0 2%; }

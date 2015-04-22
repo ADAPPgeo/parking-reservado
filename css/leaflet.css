@@ -388,8 +388,7 @@
 	text-align: center;
 	}
 .leaflet-popup-content-wrapper {
-	padding: 1px;
-	text-align: left;
+	padding: 5px;	
 	border-radius: 12px;
 	}
 .leaflet-popup-content {
@@ -421,9 +420,9 @@
 	}
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-	background: #001e42;
+	background: rgba(0,30,66,0.8);
 
-	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+	box-shadow: 0 3px 14px rgba(0,0,0,0.6);
 	}
 .leaflet-container a.leaflet-popup-close-button {
 	position: absolute;
