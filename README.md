@@ -15,23 +15,13 @@ Aplicación HTML5 para localizar plazas de aparcamiento reservado a personas con
 
 _Incluidas en la carpeta dist_
 
-* JQuery
+* JQuery: jquery-1.8.1.min.js
 
-jquery-1.8.1.min.js
+* [Leaflet](http://leafletjs.com) Librería Javascript de visualización de mapas
 
-* [Leaflet](http://leafletjs.com)
+* [Leaflet Vector Layers](http://jasonsanford.github.io/leaflet-vector-layers/) Complemento para Leaflet de conexión con el servicio CartodDB
 
-Librería Javascript de visualización de mapas
-
-* [Leaflet Vector Layers](http://jasonsanford.github.io/leaflet-vector-layers/)
-
-Complemento para Leaflet de conexión con el servicio CartodDB
-
-* [leaflet-locatecontrol _próximamente_](https://github.com/domoritz/leaflet-locatecontrol)
-
-Complemento para Leaflet con funcionalidades de localización
-
-
+* [leaflet-locatecontrol _próximamente_](https://github.com/domoritz/leaflet-locatecontrol) Complemento para Leaflet con funcionalidades de localización
 
 ## Fuente de los datos
 
