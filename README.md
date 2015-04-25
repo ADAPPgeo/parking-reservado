@@ -19,11 +19,11 @@ _Incluidas en la carpeta dist_
 
 * [Leaflet](http://leafletjs.com) Librería Javascript de visualización de mapas
 
-* [Leaflet Vector Layers](http://jasonsanford.github.io/leaflet-vector-layers/) Complemento para Leaflet de conexión con el servicio CartodDB
+* [Leaflet Vector Layers:](http://jasonsanford.github.io/leaflet-vector-layers/) Complemento para Leaflet de conexión con el servicio CartodDB
 
-* [leaflet-locatecontrol _próximamente_](https://github.com/domoritz/leaflet-locatecontrol) Complemento para Leaflet con funcionalidades de localización
+* [leaflet-locatecontrol _(próximamente)_:](https://github.com/domoritz/leaflet-locatecontrol) Complemento para Leaflet con funcionalidades de localización
 
-* [Font Awesome](http://fortawesome.github.io/Font-Awesome/) Biblioteca de iconos abierta
+* [Font Awesome:](http://fortawesome.github.io/Font-Awesome/) Biblioteca de iconos abierta
 
 ## Fuente de los datos
 
@@ -31,7 +31,7 @@ Los datos corresponden al juego de datos que ofrece el Ayuntamiento de Madrid a 
 
 [Portal de datos abiertos de Madrid](http://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=dd5900ac205a7410VgnVCM2000000c205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD)
 
-Estos datos han sido limpiados de algún error, principalmente en el campo de número de portal.
+Estos datos han pasado un proceso de limpieza de errores, principalmente en el campo de número de portal.
 
 ## Acceso a los datos
 
