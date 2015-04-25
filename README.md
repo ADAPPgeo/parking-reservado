@@ -23,6 +23,8 @@ _Incluidas en la carpeta dist_
 
 * [leaflet-locatecontrol _próximamente_](https://github.com/domoritz/leaflet-locatecontrol) Complemento para Leaflet con funcionalidades de localización
 
+* [Font Awesome](http://fortawesome.github.io/Font-Awesome/) Biblioteca de iconos abierta
+
 ## Fuente de los datos
 
 Los datos corresponden al juego de datos que ofrece el Ayuntamiento de Madrid a través de su portal de datos abiertos:
