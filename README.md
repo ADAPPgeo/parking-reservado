@@ -2,15 +2,14 @@
 
 # Versión Web App
 
-Aplicación HTML5 para localizar plazas de aparcamiento reservado en la ciudad de Madrid
+Aplicación HTML5 para localizar plazas de aparcamiento reservado a personas con discapacidad en la ciudad de Madrid
 
 ##Funcionalidades
 
-*Visualizar puntos en un mapa correspondientes a las plazas de aparcamiento reservado en Madrid
-*Consultar dirección postal de una plaza en concreto, así como el número de plazas correspondentes en ese lugar.
-*Compartir el punto mediante redes sociales como Whatsapp, Facebook, Twitter
-*Representar un punto correspondiente a una plaza mediante Google Maps para poder usar sus servicios, como Street View
-
+* Visualizar puntos en un mapa correspondientes a las plazas de aparcamiento reservado en Madrid
+* Consultar dirección postal de una plaza en concreto, así como el número de plazas correspondentes en ese lugar.
+* Compartir el punto mediante redes sociales como Whatsapp, Facebook, Twitter
+* Representar un punto correspondiente a una plaza reservada mediante Google Maps para poder usar sus servicios, como Street View
 
 ## Dependencias
 
