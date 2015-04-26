@@ -7,9 +7,10 @@ Aplicación HTML5 para localizar plazas de aparcamiento reservado a personas con
 ##Funcionalidades
 
 * Visualizar puntos en un mapa correspondientes a las plazas de aparcamiento reservado en Madrid
-* Consultar dirección postal de una plaza en concreto, así como el número de plazas correspondentes en ese lugar.
+* Consultar dirección postal de cada punto mediante _popup_, así como el número de plazas correspondentes en ese lugar.
+* Localizar y representar la posición del usuario
 * Compartir el punto mediante redes sociales como Whatsapp, Facebook, Twitter
-* Representar un punto correspondiente a una plaza reservada mediante Google Maps para poder usar sus servicios, como Street View
+* Representar mediante Google Maps un punto correspondiente a una plaza reservada para poder usar sus servicios, como el cálculo de rutas o Google Street View.
 
 ## Dependencias
 
@@ -27,7 +28,7 @@ _Incluidas en la carpeta dist_
 
 ## Fuente de los datos
 
-Los datos corresponden al juego de datos que ofrece el Ayuntamiento de Madrid a través de su portal de datos abiertos:
+Los datos corresponden al juego de datos que ofrece el **Ayuntamiento de Madrid** a través de su portal de datos abiertos:
 
 [Portal de datos abiertos de Madrid](http://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=dd5900ac205a7410VgnVCM2000000c205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD)
 
@@ -35,16 +36,16 @@ Estos datos han pasado un proceso de limpieza de errores, principalmente en el c
 
 ## Acceso a los datos
 
-Los datos se alojan como base de datos PostGIS en una cuenta de cartodb.
+Los datos se alojan como base de datos PostGIS en una cuenta de **cartodb.com**
 
 Se emplean dos tablas:
 
-* parking: Puntos geolocalizados correspondientes a las plazas de parking reservado de la ciudad de Madrid
-* distritos: Polígonos correspondientes a los límites de los distintis distritos de la ciudad de Madrid
+* **parking:** Puntos geolocalizados correspondientes a las plazas de parking reservado de la ciudad de Madrid
+* **distritos:** Polígonos correspondientes a los límites de los distintis distritos de la ciudad de Madrid
 
 ## Descripción de los datos
 
-Para una descripción detallada de las tablas de datos con sus campos, consultar el documento _desc_datos.md_
+Para una descripción detallada de las tablas de datos con sus campos, consultar el documento **_descrip_datos.md_**
 
 
 
