@@ -18,7 +18,7 @@ _Incluidas en la carpeta dist_
 
 * JQuery: jquery-1.8.1.min.js
 
-* [Leaflet](http://leafletjs.com) Librería Javascript de visualización de mapas
+* [Leaflet](http://leafletjs.com) Librería Javascript de visualización de mapas. Copyright (c) 2010-2015, Vladimir Agafonkin; Copyright (c) 2010-2011, CloudMade. [All rights reserved](https://github.com/Leaflet/Leaflet/blob/master/LICENSE).
 
 * [Leaflet Vector Layers:](http://jasonsanford.github.io/leaflet-vector-layers/) Complemento para Leaflet de conexión con el servicio CartodDB
 
