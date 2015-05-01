@@ -165,7 +165,19 @@ if (cadVariables.length>0){
 //pone en marcha la capa de cartodb
   cartodb_man_hole.setMap(map);
 
-    L.control.locate().addTo(map);
+  //L.latLngBounds( <LatLng> southWest, <LatLng> northEast )
+
+    var southWest = L.latLng(40.3323,-3.8234),
+        northEast = L.latLng(40.5336,-3.5494),
+        bounds = L.latLngBounds(southWest, northEast);
+
+    map.setMaxBounds(bounds);
+
+    L.control.locate({
+        onLocationOutsideMapBounds:  function(context) { // called when outside map boundaries
+            alert('Estás fuera de Madrid');
+    }
+    }).addTo(map);
     //map.addLayer(ocio);
 
 });
