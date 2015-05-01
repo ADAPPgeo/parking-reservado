@@ -165,6 +165,7 @@ if (cadVariables.length>0){
 //pone en marcha la capa de cartodb
   cartodb_man_hole.setMap(map);
 
+    L.control.locate().addTo(map);
     //map.addLayer(ocio);
 
 });
