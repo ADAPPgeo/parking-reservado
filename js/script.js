@@ -119,10 +119,10 @@ if (cadVariables.length>0){
         label:'{calle}',
         circleMarker: true,
         radius: 10,
-        color: "#404040",
-        fillColor: "#e0e0e0",
+        color: "#fff",
+        fillColor: "#0F3B82",
         opacity: 1,
-        fillOpacity: 0.5
+        fillOpacity: 0.8
       }
     },
     popupTemplate: function (properties) {
