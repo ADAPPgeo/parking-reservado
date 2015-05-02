@@ -185,7 +185,7 @@
 	outline: 0;
 	}
 .leaflet-container a {
-	color: #001e42;
+	color: #fff;
 	}
 .leaflet-container a.leaflet-active {
 	outline: 2px solid orange;
@@ -331,6 +331,7 @@
 	color: #333;
 	}
 .leaflet-control-attribution a {
+	color: #001E42;
 	text-decoration: none;
 	}
 .leaflet-control-attribution a:hover {
