@@ -85,8 +85,9 @@ if (cadVariables.length>0){
   centro = new L.LatLng(lat,lon)    
 }
 
-
-
+var mbAttr = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, '+'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, '+'Imagery © <a href="http://mapbox.com">Mapbox</a>'+' Powered by <a href="http://cartodb.com">CartoDB</a>',
+    mbUrl = 'https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
+var diurno = L.tileLayer(mbUrl, {id: 'adappgeo.i54gkmab', attribution: mbAttr});
 
  map = new L.Map("map", {
     //center: new L.LatLng(40.41075,-3.69366),
@@ -94,12 +95,12 @@ if (cadVariables.length>0){
     zoom: 17,
     layers: [
     //new L.TileLayer("http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png", {
-    new L.TileLayer('http://a.tiles.mapbox.com/v3/examples.map-20v6611k/{z}/{x}/{y}.png', {
-      
-            maxZoom: 18,
-            minZoom: 12,
-            subdomains: ["otile1", "otile2", "otile3", "otile4"],
-            attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
+    //new L.TileLayer('http://a.tiles.mapbox.com/v3/examples.map-20v6611k/{z}/{x}/{y}.png', { 
+    new L.tileLayer(mbUrl, {
+        id: 'adappgeo.i54gkmab',
+        attribution: mbAttr,   
+        maxZoom: 18,
+        minZoom: 12
         })
     ]
   });
