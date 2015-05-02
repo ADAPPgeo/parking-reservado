@@ -185,7 +185,7 @@
 	outline: 0;
 	}
 .leaflet-container a {
-	color: #fff;
+	color: #001e42;
 	}
 .leaflet-container a.leaflet-active {
 	outline: 2px solid orange;
@@ -339,6 +339,7 @@
 .leaflet-container .leaflet-control-attribution,
 .leaflet-container .leaflet-control-scale {
 	font-size: 11px;
+	bottom: -39px;
 	}
 .leaflet-left .leaflet-control-scale {
 	margin-left: 5px;
