@@ -25,7 +25,7 @@ h1, h2, h3 { font-family: 'Big Noodle', sans-serif; text-shadow: 1px 2px rgba(0,
 h3 {
   padding: 0 12px 4px;
 }
-p { line-height: 1.1em; margin-bottom: 1em; }
+p { font-size: 1.5em; line-height: 1.1em; margin-bottom: 1em; margin: 0px 0px 85px 0px;}
 
 ul.bl--list { margin-bottom: 1.2em; font-weight: 800; }
   ul.bl--list li { margin-left: 30px; list-style: disc; width: 50%; }
