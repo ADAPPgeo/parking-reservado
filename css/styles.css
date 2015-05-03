@@ -22,10 +22,11 @@ h4 { font-family: 'Gentium Book Basic', serif; }
 h5 { font-family: 'Cantarell', sans-serif; }
 h6 { font-family: 'Cantarell', sans-serif; }
 h1, h2, h3 { font-family: 'Big Noodle', sans-serif; text-shadow: 1px 2px rgba(0, 0, 0, 0.7); }
+h2 {color:#fff;}
 h3 {
   padding: 0 12px 4px;
 }
-p { font-size: 1.5em; line-height: 1.1em; margin-bottom: 1em; margin: 0px 0px 85px 0px;}
+p { font-size: 1.5em; line-height: 1.1em; margin-bottom: 1em; margin: 0px 0px 85px;}
 
 ul.bl--list { margin-bottom: 1.2em; font-weight: 800; }
   ul.bl--list li { margin-left: 30px; list-style: disc; width: 50%; }
@@ -65,7 +66,7 @@ html[xmlns] .clearfix { display: block; }
 * html .clearfix { height: 1%; }
 
 /* LAYOUT */
-  body { color: #fff; font-family: 'Ubuntu Condensed', sans-serif;, sans-serif; font-size: 1.2em; min-height: 100%; position: relative; top: 0;
+  body { color: #001E42; font-family: 'Ubuntu Condensed', sans-serif;, sans-serif; font-size: 1.2em; min-height: 100%; position: relative; top: 0;
     font-size: 0.9em; overflow: hidden; position: fixed; width: 100%; }
   html, body, #map, #main { height: 100%; padding: 0; margin: 0;min-height: 100%; }
   body.sidebarAct { padding-left: 300px; box-sizing: border-box; }
@@ -78,14 +79,29 @@ html[xmlns] .clearfix { display: block; }
     #header a { color: white; text-decoration: none; }
       #header a:hover, #header a:visited { color: white; text-decoration: underline; }
 
-    #header i { text-align: right; font-size: 2em; padding: 6px 0 0 80px;}
-    #header .logo { font-size: 2em; text-indent: -999px; overflow: hidden; margin: 10px 0 0 10px;
+    #header i {
+      text-align: right;
+      font-size: 2em;
+      padding: 0 0 0 65px;}
+    #header .logo {
+      font-size: 2em;
+      text-indent:-999px;
+      overflow: hidden;
+      line-height: 50px;
+      margin: 10px 0 0 10px;
       }
     #header .power { height: 100%; z-index: 2; position: relative; padding: 0; overflow: hidden; text-indent: -999px; margin-right: 10px;
       background: #001e42 url(../img/sp--header.png) -209px 10px no-repeat; width: 50px; }
     #header .twt {content:'\f007'; height: 100%; z-index: 2; position: relative; padding: 0; overflow: hidden; text-indent: -999px; margin-right: 10px;
        width: 37px; }
-    #header .title {line-height: 37px; font-family: 'Ubuntu Condensed', sans-serif; font-size: 1.5em; font-weight: 800;  width: 300px; height: 35px;  z-index: 2; margin: 10px 0 0 10px;}
+    #header .title {
+      line-height: 37px;
+      font-family: 'Ubuntu Condensed',
+      sans-serif; font-size: 1.5em;
+      font-weight: 800;
+      width: 300px; height: 35px;
+      z-index: 2;
+      margin: 0px 0 0 30px;}
 
     #hd-menu {  color: white; background: #001e42; float: left; font-size: 1.2em; }
       #hd-menu a:hover { text-decoration: none; color: #001e42; background: #A0C6E5;  }
@@ -268,7 +284,7 @@ select { margin-bottom: 0.9em; }
       background: white; height: 100%; overflow: auto;
       -webkit-transition: all 1s; -moz-transition: all 1s;  -o-transition: all 1s; transition: all 1s;  }
   .bl-slide-pnl .wrapper { margin: 0 auto; max-width: 960px; width: 100%; }
-    .bl-slide-pnl h2 { font-size: 2em; margin: 0 0 1.2em 0; color: red; }
+    .bl-slide-pnl h2 { font-size: 2em; margin: 0 0 1.2em 0; color: #001E42; text-shadow: none;}
   .bl-slide-pnl .closeForm { position: absolute; right: 20px; top: 70px; }
 
   /* state */
@@ -286,7 +302,7 @@ select { margin-bottom: 0.9em; }
 .main-bottom .wk-clr-b { clear: both; width: 100%; margin: 0 auto; font-size: 1.2em; text-align: center; }
   .main-bottom .wk-col-33 { width: 20%; margin: 0 2%; }
 
-.btn { display: inline-block; padding: 2px; text-decoration: none; text-transform: uppercase; color: #3a7c99; 
+.btn { display: inline-block; padding: 2px; text-decoration: none; text-transform: uppercase; color: #001E60; 
  font-weight: 800; padding: 12px; }
 
 .hidebtn {  position: absolute; top: 20px; right:5px; width:105px; padding:2px;
