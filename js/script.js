@@ -117,6 +117,11 @@ var diurno = L.tileLayer(mbUrl, {id: 'adappgeo.i54gkmab', attribution: mbAttr});
     },
     popupTemplate: function (properties) {
       var nombrecalle = properties.calle.split(",");
+
+      if (nombrecalle.length==2){
+        nombrecalle[2] ='';
+      }
+
       var address = nombrecalle[1]+ " " + nombrecalle[2]+ " " + nombrecalle[0] + ", " + properties.portal;
       var link_url = 'lat='+ properties.lat + '&lon=' + properties.lon;
 
