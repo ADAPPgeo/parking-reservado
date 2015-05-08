@@ -1,11 +1,7 @@
 window.onload = function() {
 
-
     ui.bindEvts();
 
-    //map.loadCartoDb();
-
-    //gMapInit()
 };
 
 //script
@@ -13,14 +9,9 @@ var map;
 
 var cartodb_man_hole, ocio;
 
-
-
 //página recibida:
 
 //<a href="http://url.pagina.destino/?variable1=valor1&variable2=valor2">
-
-
-
 
 
 $(document).ready(function() {
@@ -63,10 +54,8 @@ $(document).ready(function() {
     });
 
 
-
-//geo.init();
-
 //Detecta si en la url hay coordenadas y centra el mapa en dichas coordenadas:
+
 var centro = new L.LatLng(40.41075,-3.69366);
 var cadVariables = location.search.substring(1,location.search.length);
 
@@ -218,64 +207,3 @@ var ui = {
     }
 };
 
-
-
-
-
-var geo = {
-
-    init: function() {
-        // geolocation gist https://gist.github.com/paulirish/366184
-        ;
-        (function(geolocation) {
-
-            if (geolocation) return;
-
-            var cache;
-
-            geolocation = window.navigator.geolocation = {};
-            geolocation.getCurrentPosition = function(callback) {
-
-                if (cache) callback(cache);
-
-                $.getScript('//www.google.com/jsapi', function() {
-
-                    // sometimes ClientLocation comes back null
-                    if (google.loader.ClientLocation) {
-                        cache = {
-                            coords: {
-                                "latitude": google.loader.ClientLocation.latitude,
-                                "longitude": google.loader.ClientLocation.longitude
-                            }
-                        };
-                    }
-
-                    callback(cache);
-                });
-
-            };
-
-            geolocation.watchPosition = geolocation.getCurrentPosition;
-
-        })(navigator.geolocation);
-    },
-
-    query: function() {
-
-        navigator.geolocation.watchPosition(
-            function(pos) {
-                return pos;
-            }, function(error) {
-                console.log('Error locatin: ' + error);
-                return false;
-            }
-        );
-
-        return false;
-    }
-
-};
-
-
-
-/*  */
