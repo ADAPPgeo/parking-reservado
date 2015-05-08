@@ -41,7 +41,7 @@ Los datos se alojan como base de datos PostGIS en una cuenta de **cartodb.com**
 Se emplean dos tablas:
 
 * **parking:** Puntos geolocalizados correspondientes a las plazas de parking reservado de la ciudad de Madrid
-* **distritos:** Polígonos correspondientes a los límites de los distintis distritos de la ciudad de Madrid
+* **distritos:** Polígonos correspondientes a los límites de los distintos distritos de la ciudad de Madrid
 
 ## Descripción de los datos
 
