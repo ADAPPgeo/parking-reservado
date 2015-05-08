@@ -1,19 +1,12 @@
+@font-face {
+  font-family: 'Ubuntu Condensed';
+  src: url('../../../../fonts/Ubuntu-C.ttf');
+}
 
-
-
-
-  @font-face {
-    font-family: 'Ubuntu Condensed';
-    src: url('../../../../fonts/Ubuntu-C.ttf');
-    
-  }
-
-  @font-face{
-    font-family: 'Big Noodle';
-    src: url('../../../../fonts/big_noodle_titling.ttf');
-  }
-
-
+@font-face{
+  font-family: 'Big Noodle';
+  src: url('../../../../fonts/big_noodle_titling.ttf');
+}
 
 h1 { font-family: 'Ubuntu Condensed', sans-serif; font-weight: 800; }
 h2 { font-family: 'Big Noodle', sans-serif; font-size: 2em; }
@@ -143,10 +136,6 @@ html[xmlns] .clearfix { display: block; }
   .hd-main { text-indent: -9999px; overflow: hidden; width: 65px; }
     .hd-main::before { text-indent: 0; }
 }
-
-
-
-
 
 /* map */
 .map-wrap { position: relative; height: 100%; }
