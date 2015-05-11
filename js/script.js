@@ -47,7 +47,7 @@ $(document).ready(function() {
         } else {
             var text = $(this).attr("data-text");
             var url = $(this).attr("data-link");
-            var message = encodeURIComponent(text) + " - " + encodeURIComponent(url);
+            var message = 'Solo puedes enviar un mensaje por Whatsapp desde un móvil';
             alert(message);
         }
 
@@ -93,6 +93,23 @@ var diurno = L.tileLayer(mbUrl, {id: 'adappgeo.i54gkmab', attribution: mbAttr});
         })
     ]
   });
+
+ // buscador de localizaciones
+
+    map.addControl( new L.Control.Search({
+            url: 'http://nominatim.openstreetmap.org/search?format=json&q={s}',
+            jsonpParam: 'json_callback',
+            propertyName: 'display_name',
+            propertyLoc: ['lat','lon'],
+            circleLocation: true,
+            markerLocation: false,          
+            autoType: false,
+            autoCollapse: true,
+            minLength: 2,
+            zoom:16
+        }) );
+
+// cargar capa de puntos de parking reservado
 
   var cartodb_man_hole = new lvector.CartoDB({
     user: "adappgeo",
@@ -169,6 +186,7 @@ var diurno = L.tileLayer(mbUrl, {id: 'adappgeo.i54gkmab', attribution: mbAttr});
     map.setMaxBounds(bounds);
 
     L.control.locate({
+        keepCurrentZoomLevel: true,
         onLocationOutsideMapBounds:  function(context) { // called when outside map boundaries
             alert('Estás fuera de Madrid');
     }
@@ -211,4 +229,3 @@ var ui = {
         });
     }
 };
-
